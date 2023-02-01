@@ -1,0 +1,58 @@
+{
+  "Applications": {
+    "$1": {
+      "Application": {
+        "Description": "A basic starting point for sites built with Vue.",
+        "Name": "Vue Quickstart Project - Forked Recipe"
+      },
+      "LookupConfig": {
+        "PathRegex": "/.*"
+      },
+      "LowCodeUnit": {
+        "Package": "fork|github://fathym-it/public-web-vue",
+        "Version": "latest",
+        "Type": "GitHub"
+      },
+      "Processor": {
+        "BaseHref": "/",
+        "DefaultFile": "index.html",
+        "Type": "DFS"
+      }
+    }
+  },
+  "Environments": {
+    "$#.PrimaryEnvironment": {
+      "Artifacts": {
+        "vue-build-release": {
+          "Name": "Vue Build/Release",
+          "Output": "./dist",
+          "Type": "GitHub",
+          "BuildCommand": "npm run build",
+          "InstallCommand": "npm ci",
+          "NPMRegistry": "https://registry.npmjs.org/"
+        }
+      },
+      "DevOpsActions": {
+        "github-artifacts-release-vue": {
+          "Name": "GitHub Artifacts - Release - Vue",
+          "Path": "lcu-github-artifacts-release.yml",
+          "ArtifactLookups": ["vue-build-release"],
+          "Templates": [
+            "https://raw.githubusercontent.com/lowcodeunit/infrastructure/master/github/actions/artifacts/_header.hbs.yml",
+            "https://raw.githubusercontent.com/lowcodeunit/infrastructure/master/github/actions/artifacts/release-flow.yml"
+          ]
+        }
+      },
+      "Sources": {
+        "fork|github://fathym-it/public-web-vue": {
+          "DevOpsActionTriggerLookups": ["github-artifacts-release-vue"],
+          "Branches": ["main"],
+          "MainBranch": "main",
+          "Organization": "fathym-it",
+          "Repository": "public-web-vue",
+          "Type": "GitHub"
+        }
+      }
+    }
+  }
+}
