@@ -10,6 +10,7 @@
       },
       "LowCodeUnit": {
         "Package": "fork|github://fathym-it/public-web-vue",
+        "Path": "lcu-github-artifacts-release.yml",
         "Version": "latest",
         "Type": "GitHub"
       },
