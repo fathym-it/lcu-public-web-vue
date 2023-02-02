@@ -50,6 +50,7 @@
           "MainBranch": "main",
           "Organization": "fathym-it",
           "Repository": "public-web-vue",
+          "Name": "github://fathym-it/public-web-vue",
           "Type": "GitHub"
         }
       }
