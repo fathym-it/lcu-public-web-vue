@@ -9,7 +9,7 @@
         "PathRegex": "/.*"
       },
       "LowCodeUnit": {
-        "Package": "fork|github://fathym-it/public-web-vue",
+        "SourceControlLookup": "fork|github://fathym-it/public-web-vue",
         "Path": "lcu-github-artifacts-release.yml",
         "Version": "latest",
         "Type": "GitHub"
