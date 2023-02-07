@@ -2,11 +2,8 @@
   "Package": {
     "Name": "Vue Quickstart Project - Forked Recipe",
     "Description": "A basic template to quickly deploy a Vue app to Fathym.",
-    "Button": "Launch",
-    "Image": "https://www.fathym.com/assets/images/logo.png",
-    "PreviewImage": "https://www.fathym.com/assets/images/logo.png",
-    "SuccessType": "Project"
-  },
-  "EaC": "./assets/eac.json",
-  "Parameters": "./assets/parameters.json"
+    "Image": "https://www.fathym.com/img/vue.png",
+    "PreviewImage": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/95/Vue.js_Logo_2.svg/1200px-Vue.js_Logo_2.svg.png",
+    "UsesGit": true
+  }
 }
