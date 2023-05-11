@@ -1,0 +1,77 @@
+{
+  "Applications": {
+    "{{$1}}-public-web-vue": {
+      "Details": {
+        "Description": "A basic starting point for sites built with Vue.",
+        "Name": "Vue Quickstart Project - Forked Recipe"
+      },
+      "LookupConfig": {
+        "PathRegex": "/.*"
+      },
+      "Package": {
+        "Details": {
+          "Build": "latest",
+          "Path": "lcu-github-artifacts-release.yml"
+        },
+        "SourceControlLookup": "github://{{ORGANIZATION}}/public-web-vue",
+        "Type": "GitHubLowCodeUnit"
+      },
+      "Processor": {
+        "Details": {
+          "BaseHref": "/",
+          "DefaultFile": "index.html"
+        },
+        "Type": "DFSProcessor"
+      }
+    }
+  },
+  "Environments": {
+    "{{EaC.PrimaryEnvironment}}": {
+      "Artifacts": {
+        "gatsby-build-release": {
+          "Type": "GitHubArtifact",
+          "Details": {
+            "Name": "Gatsby Build/Release",
+            "Output": "./dist",
+            "BuildCommand": "npm run build",
+            "InstallCommand": "npm ci",
+            "NPMRegistry": "https://registry.npmjs.org/"
+          }
+        }
+      },
+      "DevOpsActions": {
+        "github-artifacts-release-vue": {
+          "ArtifactLookups": ["vue-build-release"],
+          "Details": {
+            "Name": "GitHub Artifacts - Release - Vue",
+            "Path": "lcu-github-artifacts-release.yml",
+            "Templates": [
+              "https://raw.githubusercontent.com/lowcodeunit/infrastructure/master/github/actions/artifacts/_header.hbs.yml",
+              "https://raw.githubusercontent.com/lowcodeunit/infrastructure/master/github/actions/artifacts/release-flow.yml"
+            ]
+          }
+        }
+      },
+      "Sources": {
+        "fork|github://fathym-it/public-web-vue": {
+          "DevOpsActionTriggerLookups": ["github-artifacts-release-vue"],
+          "Details": {
+            "Branches": ["main"],
+            "MainBranch": "main",
+            "Organization": "{{ORGANIZATION}}",
+            "Repository": "public-web-vue",
+            "Name": "github://{{ORGANIZATION}}/public-web-vue"
+          },
+          "Type": "GitHubSourceControl"
+        }
+      }
+    }
+  },
+  "Projects": {
+    "{{PROJECT_LOOKUP}}": {
+      "ApplicationLookups": [
+        "{{$1}}-public-web-vue"
+      ]
+    }
+  }
+}

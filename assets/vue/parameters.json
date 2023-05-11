@@ -1,0 +1,23 @@
+{
+    "PROJECT_LOOKUP": {
+      "Order": 1,
+      "Prompts": [
+        {
+          "Type": "eac:projects|select",
+          "Message": "Choose the project to deploy the Quckstart Vue to?",
+          "Arguments": {
+            "CreateText": "Create a project"
+          }
+        }
+      ]
+    },
+    "ORGANIZATION": {
+      "Order": 2,
+      "Prompts": [
+        {
+          "Type": "git:organizations|select",
+          "Message": "Which organization would you like to fork code into?"
+        }
+      ]
+    }
+  }
