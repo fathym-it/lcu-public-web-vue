@@ -28,10 +28,10 @@
   "Environments": {
     "{{EaC.PrimaryEnvironment}}": {
       "Artifacts": {
-        "gatsby-build-release": {
+        "vue-build-release": {
           "Type": "GitHubArtifact",
           "Details": {
-            "Name": "Gatsby Build/Release",
+            "Name": "Vue Build/Release",
             "Output": "./dist",
             "BuildCommand": "npm run build",
             "InstallCommand": "npm ci",
