@@ -69,6 +69,10 @@
   },
   "Projects": {
     "{{PROJECT_LOOKUP}}": {
+      "Details": {
+        "Name": "{{#if (lookup EaC.Projects PROJECT_LOOKUP)}}{{#if Details.Name}}{{Details.Name}}{{/if}}{{else}}Vue Starter - GitHub Fork{{/if}}",
+        "Description": "{{#if (lookup EaC.Projects PROJECT_LOOKUP)}}{{#if Details.Description}}{{Details.Description}}{{/if}}{{else}}A Vue starter app deployed to Fathym via a repository forked to your GitHub.{{/if}}"
+      },
       "ApplicationLookups": [
         "{{$1}}-public-web-vue"
       ]
