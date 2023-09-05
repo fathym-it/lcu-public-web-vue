@@ -4,7 +4,7 @@
       "Prompts": [
         {
           "Type": "eac:projects|select",
-          "Message": "Choose the project to deploy the Quckstart Vue to?",
+          "Message": "Choose the project to deploy the Quickstart Vue to?",
           "Arguments": {
             "CreateText": "Create a project"
           }
